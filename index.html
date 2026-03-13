@@ -117,7 +117,63 @@
       letter-spacing: 0.2px;
     }
 
-    /* CTA */
+    /* 下载区：醒目主 CTA */
+    .download-section {
+      background: linear-gradient(135deg, var(--primary) 0%, #0F766E 100%);
+      border-radius: var(--radius);
+      padding: 28px var(--card-padding);
+      margin: 0 0 var(--section-gap);
+      box-shadow: 0 4px 20px rgba(13, 148, 136, 0.35);
+      text-align: center;
+    }
+    .download-section .download-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--on-primary);
+      margin: 0 0 6px;
+      letter-spacing: -0.2px;
+    }
+    .download-section .download-desc {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.9);
+      margin: 0 0 20px;
+    }
+    .download-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      align-items: center;
+    }
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-width: 160px;
+      padding: 14px 24px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--on-primary);
+      background: var(--surface);
+      border: none;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      font-family: var(--font);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .download-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+    }
+    .download-btn:active {
+      transform: translateY(0);
+    }
+    .download-btn.android::before { content: "📱"; }
+    .download-btn.macos::before { content: "💻"; }
+
+    /* CTA 补充说明 */
     .cta-wrap {
       text-align: center;
       padding: var(--section-gap) 0 32px;
@@ -147,6 +203,15 @@
   </header>
 
   <main class="page">
+    <section class="download-section">
+      <h2 class="download-title">立即下载</h2>
+      <p class="download-desc">选择你的平台，免费安装财务管家 Fire</p>
+      <div class="download-buttons">
+        <a class="download-btn android" href="https://github.com/ops-coffee/fire/releases/download/v1.0.0/app-release.apk" download>Android 下载</a>
+        <a class="download-btn macos" href="https://github.com/ops-coffee/fire/releases/download/v1.0.0/app.zip" download>macOS 下载</a>
+      </div>
+    </section>
+
     <section class="section">
       <h2 class="section-title">记账</h2>
       <ul>
@@ -192,7 +257,7 @@
 
     <div class="cta-wrap">
       <p class="cta-lead">下载 <span class="brand">财务管家 Fire</span>，立即开始使用</p>
-      <p class="cta-note">支持 iOS、Android 及 Web 端</p>
+      <p class="cta-note">支持 Android、macOS 直接下载，iOS 与 Web 端敬请期待</p>
     </div>
   </main>
 </body>
